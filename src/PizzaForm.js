@@ -5,7 +5,6 @@ export default function FriendForm(props) {
         values,
         submit,
         change,
-        disabled,
         errors,
     } = props
 
@@ -25,8 +24,9 @@ export default function FriendForm(props) {
             <h2>Create Your Pizza</h2>
 
             <div className='form-group inputs'>
+                <div id='name-input'>
                 <h4>Customer Information</h4>
-                <label>Name (required):
+                <label>Name:
                     <input 
                         value={values.name}
                         onChange={onChange}
@@ -34,10 +34,11 @@ export default function FriendForm(props) {
                         type='text'
                     />
                 </label>
+                </div>
 
                 <h4>Build Your Pizza</h4>
                     <div id='size-dropdown'>
-                    <label>Size (required): 
+                    <label>Size: 
                         <select 
                             onChange={onChange}
                             value={values.size}
@@ -100,7 +101,7 @@ export default function FriendForm(props) {
             </div>
 
             <div className='form-group submit'>
-                <button disabled={disabled}>Order</button>
+                <button id='order-button'>Order</button>
 
                 <div className="errors">
                     <div>{errors.name}</div>
